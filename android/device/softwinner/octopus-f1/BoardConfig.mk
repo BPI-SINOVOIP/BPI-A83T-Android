@@ -38,18 +38,21 @@ ifeq ($(BOARD_WIFI_VENDOR), broadcom)
     BOARD_WLAN_DEVICE           := bcmdhd
     WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 
-    BOARD_USR_WIFI := gb9663
+    BOARD_USR_WIFI := ap6212
     include hardware/broadcom/wlan/bcmdhd/firmware/$(BOARD_USR_WIFI)/device-bcm.mk
 
 endif
 
 #sensor parameter
-SW_BOARD_USES_SENSORS_TYPE := lsm9ds0
+#Justin Porting 20151027 Start
+#SW_BOARD_USES_SENSORS_TYPE := lsm9ds0
+SW_BOARD_USES_SENSORS_TYPE := aw_sensors
+#Justin Porting 20151027 End
 
 # 2. Bluetooth Configuration
 # make sure BOARD_HAVE_BLUETOOTH is true for every bt vendor
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_HAVE_BLUETOOTH_NAME := gb9663
+BOARD_HAVE_BLUETOOTH_NAME := ap6212
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/softwinner/octopus-f1/bluetooth
 TARGET_USE_BOOSTUP_OPZ := true

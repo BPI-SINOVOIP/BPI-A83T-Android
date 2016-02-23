@@ -25,6 +25,26 @@ on init
     mkdir /storage/usbhost 0700 root root
     symlink /storage/usbhost /mnt/usbhost
 
+
+
+#Justin 20150930 Porting Start
+        mkdir /storage/extsd/DragonBox 0777 system system
+
+        mkdir /mnt/media_rw/usbhost0 0700 media_rw media_rw
+        mkdir /storage/usbhost0 0700 root root
+        symlink /storage/usbhost0 /mnt/usbhost0
+
+        mkdir /mnt/media_rw/usbhost1 0700 media_rw media_rw
+        mkdir /storage/usbhost1 0700 root root
+        symlink /storage/usbhost1 /mnt/usbhost1
+
+        chmod 777 /sys/bus/platform/devices/reg-81x-cs-gpio0ldo/max_microvolts
+        chmod 777 /sys/bus/platform/devices/reg-81x-cs-gpio1ldo/max_microvolts
+
+#Justin 20150930 Porting End
+
+
+
     mount debugfs debugfs /sys/kernel/debug
 
 on post-fs-data
@@ -74,6 +94,47 @@ on early-fs
     insmod /system/vendor/modules/disp.ko
     insmod /system/vendor/modules/hdmi.ko
 
+
+
+#insmod module (Justin 20151020 Porting Start)
+	insmod /system/vendor/modules/gpio-sunxi.ko
+        insmod /system/vendor/modules/sunxi_gmac.ko
+        insmod /system/vendor/modules/sunxi-ir-rx.ko
+
+
+        chmod 777 /sys/class/gpio_sw/PH5/data
+	chmod 777 /sys/class/gpio_sw/PH4/data
+	chmod 777 /sys/class/gpio_sw/PL10/data
+	chmod 777 /sys/class/gpio_sw/PC4/data
+	chmod 777 /sys/class/gpio_sw/PC7/data
+	chmod 777 /sys/class/gpio_sw/PC17/data
+	chmod 777 /sys/class/gpio_sw/PC0/data
+	chmod 777 /sys/class/gpio_sw/PC1/data
+	chmod 777 /sys/class/gpio_sw/PC2/data
+	chmod 777 /sys/class/gpio_sw/PH3/data
+	chmod 777 /sys/class/gpio_sw/PC18/data
+	chmod 777 /sys/class/gpio_sw/PG10/data
+	chmod 777 /sys/class/gpio_sw/PG11/data
+	chmod 777 /sys/class/gpio_sw/PG12/data
+	chmod 777 /sys/class/gpio_sw/PE4/data
+	chmod 777 /sys/class/gpio_sw/PB0/data
+	chmod 777 /sys/class/gpio_sw/PB1/data
+	chmod 777 /sys/class/gpio_sw/PB3/data
+	chmod 777 /sys/class/gpio_sw/PB2/data
+	chmod 777 /sys/class/gpio_sw/PL8/data
+	chmod 777 /sys/class/gpio_sw/PL9/data
+	chmod 777 /sys/class/gpio_sw/PC3/data
+	chmod 777 /sys/class/gpio_sw/PH10/data
+	chmod 777 /sys/class/gpio_sw/PH2/data
+	chmod 777 /sys/class/gpio_sw/PG13/data
+	chmod 777 /sys/class/gpio_sw/PE5/data
+	chmod 777 /sys/class/gpio_sw/PE18/data
+	chmod 777 /sys/class/gpio_sw/PE19/data
+
+#insmod module (Justin 20151020 Porting End)
+
+
+
 # gpu
     insmod /system/vendor/modules/pvrsrvkm.ko
 
@@ -82,26 +143,25 @@ on early-fs
     start installd
 
 #csi module
-    insmod /system/vendor/modules/videobuf-core.ko
-    insmod /system/vendor/modules/videobuf-dma-contig.ko
-    insmod /system/vendor/modules/cci.ko
-    insmod /system/vendor/modules/actuator.ko
-    insmod /system/vendor/modules/vfe_os.ko
-    insmod /system/vendor/modules/vfe_subdev.ko
-    insmod /system/vendor/modules/dw9714_act.ko
-    insmod /system/vendor/modules/hi253.ko
-    insmod /system/vendor/modules/ov8858_4lane.ko
-    insmod /system/vendor/modules/vfe_v4l2.ko
+     insmod  /system/vendor/modules/videobuf-core.ko            
+     insmod  /system/vendor/modules/videobuf-dma-contig.ko  
+     insmod  /system/vendor/modules/cci.ko         
+     insmod  /system/vendor/modules/actuator.ko
+     insmod  /system/vendor/modules/vm149c_act.ko
+     insmod  /system/vendor/modules/vfe_os.ko                   
+     insmod  /system/vendor/modules/vfe_subdev.ko
+     insmod  /system/vendor/modules/ov8865_4lane.ko
+     insmod  /system/vendor/modules/vfe_v4l2.ko
 
 # network
     insmod /system/vendor/modules/bcmdhd.ko
     insmod /system/vendor/modules/bcm_btlpm.ko
-    insmod /system/vendor/modules/usbnet.ko
-    insmod /system/vendor/modules/asix.ko
-    insmod /system/vendor/modules/qf9700.ko
-    insmod /system/vendor/modules/mcs7830.ko
-    insmod /system/vendor/modules/rtl8150.ko
-    insmod /system/vendor/modules/cdc_ether.ko
+#    insmod /system/vendor/modules/usbnet.ko
+#    insmod /system/vendor/modules/asix.ko
+#    insmod /system/vendor/modules/qf9700.ko
+#    insmod /system/vendor/modules/mcs7830.ko
+#    insmod /system/vendor/modules/rtl8150.ko
+#    insmod /system/vendor/modules/cdc_ether.ko
 
 # bluetooth
     # UART device

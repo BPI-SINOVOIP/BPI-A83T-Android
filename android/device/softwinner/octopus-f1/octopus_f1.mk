@@ -7,10 +7,12 @@ DEVICE_PACKAGE_OVERLAYS := device/softwinner/octopus-f1/overlay \
 
 PRODUCT_PACKAGES += gatord
 
+
 PRODUCT_PACKAGES += \
     ESFileExplorer \
     VideoPlayer \
-    Bluetooth
+    Bluetooth 
+
 
 PRODUCT_COPY_FILES += \
     device/softwinner/octopus-f1/kernel:kernel \
@@ -70,15 +72,19 @@ $(call inherit-product, device/softwinner/common/rild/radio_common.mk)
 #$(call inherit-product, device/softwinner/common/ril_modem/huawei/mu509/huawei_mu509.mk)
 #$(call inherit-product, device/softwinner/common/ril_modem/Oviphone/em55/oviphone_em55.mk)
 
+# Justin Porting 20151026 Start  
 # camera config for isp
 PRODUCT_COPY_FILES += \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/isp_3a_param.ini:system/etc/hawkview/ov8858_4lane/isp_3a_param.ini \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/isp_iso_param.ini:system/etc/hawkview/ov8858_4lane/isp_iso_param.ini \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/isp_test_param.ini:system/etc/hawkview/ov8858_4lane/isp_test_param.ini \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/isp_tuning_param.ini:system/etc/hawkview/ov8858_4lane/isp_tuning_param.ini \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/bin/gamma_tbl.bin:system/etc/hawkview/ov8858_4lane/bin/gamma_tbl.bin \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/bin/hdr_tbl.bin:system/etc/hawkview/ov8858_4lane/bin/hdr_tbl.bin \
-    device/softwinner/octopus-common/hawkview/8M/ov8858_4lane/bin/lsc_tbl.bin:system/etc/hawkview/ov8858_4lane/bin/lsc_tbl.bin
+    device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/isp_3a_param.ini:system/etc/hawkview/ov8865_4lane/isp_3a_param.ini \
+   device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/isp_iso_param.ini:system/etc/hawkview/ov8865_4lane/isp_iso_param.ini \
+    device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/isp_test_param.ini:system/etc/hawkview/ov8865_4lane/isp_test_param.ini \
+   device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/isp_tuning_param.ini:system/etc/hawkview/ov8865_4lane/isp_tuning_param.ini \
+   device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/bin/gamma_tbl.bin:system/etc/hawkview/ov8865_4lane/bin/gamma_tbl.bin \
+   device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/bin/hdr_tbl.bin:system/etc/hawkview/ov8865_4lane/bin/hdr_tbl.bin \
+    device/softwinner/octopus-common/hawkview/8M/ov8865_4lane/bin/lsc_tbl.bin:system/etc/hawkview/ov8865_4lane/bin/lsc_tbl.bin
+
+# Justin Porting 20151026 End
+
 
 #sensor    
 PRODUCT_COPY_FILES += \
@@ -88,11 +94,13 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/softwinner/octopus-f1/gps/gps.mk)
 
 # usb
+#Justin 20151005 Porting Start
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    ro.adb.secure=1 \
+    persist.sys.usb.config=mtp,adb\
+    ro.adb.secure=0 \
     ro.sys.mutedrm=true \
     rw.logger=0
+#Justin 20151005 Porting End
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.firmware=v2.1rc3
@@ -106,19 +114,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapmaxfree=8m \
     ro.zygote.disable_gl_preload=true
 
+#Justin 20151005 Porting Start
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.property.tabletUI=false \
-    ro.sf.lcd_density=320 \
+    ro.sf.lcd_density=120 \
+#Justin 20151005 Porting End
+
 
 # function
+# Justin Porting 20151029 Start 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.bootfast=true \
-    ro.dmic.used=true
+    ro.dmic.used=false
+# Justin Porting 20151030 End
+
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.timezone=Asia/Shanghai \
-    persist.sys.country=CN \
-    persist.sys.language=zh
+   	persist.sys.timezone=Asia/Taipei \
+	persist.sys.language=EN \
+	persist.sys.country=US
+
+
 
 PRODUCT_AAPT_CONFIG := large xlarge hdpi xhdpi
 PRODUCT_AAPT_PERF_CONFIG := xhdpi
@@ -129,5 +145,5 @@ $(call inherit-product-if-exists, vendor/google/products/gms_base.mk)
 PRODUCT_BRAND := Allwinner
 PRODUCT_NAME := octopus_f1
 PRODUCT_DEVICE := octopus-f1
-PRODUCT_MODEL := Octopus A83 F1
+PRODUCT_MODEL :=  BPI-M3
 PRODUCT_MANUFACTURER := Allwinner

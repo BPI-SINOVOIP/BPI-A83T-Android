@@ -14,7 +14,7 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
-
+   
 ##########################
 #include $(CLEAR_VARS)
 #LOCAL_MODULE := Sample
@@ -50,17 +50,65 @@ LOCAL_SRC_FILES := DragonPhone.apk
 include $(BUILD_PREBUILT)
 
 ########################################
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := DragonAging
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_CERTIFICATE := platform
+#LOCAL_MODULE_PATH := $(TARGET_OUT)/app
+#LOCAL_MODULE_CLASS := APPS
+#LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+#LOCAL_SRC_FILES := DragonAging.apk
+#include $(BUILD_PREBUILT)
+
+################Justin for BPI-M3 StabilityTest###################
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := StabilityTest
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_CERTIFICATE := platform
+#LOCAL_MODULE_PATH := $(TARGET_OUT)/precopy
+#LOCAL_MODULE_CLASS := APPS
+#LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+#LOCAL_SRC_FILES :=StabilityTest.apk
+#include $(BUILD_PREBUILT)
+
+
+################Justin for BPI-M3 GooglePinyin ##################
 include $(CLEAR_VARS)
-LOCAL_MODULE := DragonAging
+LOCAL_MODULE := GooglePinyin
 LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := platform
-LOCAL_MODULE_PATH := $(TARGET_OUT)/precopy
+LOCAL_MODULE_PATH := $(TARGET_OUT)/preinstall
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_SRC_FILES := DragonAging.apk
+LOCAL_SRC_FILES :=GooglePinyin.apk
 include $(BUILD_PREBUILT)
 
-################################################################################
+################Justin for BPI-M3 GoogleZhuyin###################
+include $(CLEAR_VARS)
+LOCAL_MODULE := kodi
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_PATH := $(TARGET_OUT)/preinstall
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_SRC_FILES :=kodi.apk
+include $(BUILD_PREBUILT)
+
+
+################Justin for BPI-M3 GoogleZhuyin###################
+include $(CLEAR_VARS)
+LOCAL_MODULE := GoogleZhuyin
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_PATH := $(TARGET_OUT)/preinstall
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_SRC_FILES :=GoogleZhuyin.apk
+include $(BUILD_PREBUILT)
+
+
+
+#################################################################
 include $(CLEAR_VARS)
 LOCAL_MODULE := ESFileExplorer
 LOCAL_MODULE_TAGS := optional
