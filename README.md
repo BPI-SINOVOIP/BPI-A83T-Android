@@ -3,7 +3,7 @@
 ----------
 
 1 $cd lichee
-   $ ./build.sh config           //sun8iw6p1
+   $ ./build.sh config          
 
 Welcome to mkscript setup progress
 All available chips:
@@ -15,6 +15,7 @@ All available chips:
    5. sun8iw8p1
    6. sun8iw9p1
    7. sun9iw1p1
+ 
 Choice: 3
 
 
@@ -22,11 +23,13 @@ All available platforms:
    0. android
    1. dragonboard
    2. linux
+ 
 Choice: 0
 
 
 All available kernel:
    0. linux-3.4
+ 
 Choice: 0
 
 
@@ -37,6 +40,7 @@ All available boards:
    3. perf2_v1_0
    4. perf3_v1_0
    5. qc
+
 Choice: 0
 
 
