@@ -15,11 +15,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.dex2oat-filter=""
 endif
 
+
+#Justin 20150930 Porting Start
 # preinstall apk
 PRODUCT_PACKAGES += \
     DragonFire \
     DragonPhone \
-    DragonAging
+    GooglePinyin  \
+    GoogleZhuyin  \
+    kodi         
+#Justin 20150930 Porting End
+
 	
 # usb
 PRODUCT_PACKAGES += \

@@ -44,6 +44,7 @@ BOARD_SEPOLICY_UNION := \
 	vold.te \
 	wpa.te \
     file.te \
-    logger.te
+    logger.te \
+	platform_app.te
 
 USE_OPENGL_RENDERER := true

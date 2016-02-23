@@ -252,7 +252,7 @@ int userial_vendor_open(tUSERIAL_CFG *p_cfg)
         return -1;
     }
 
-#if defined(USE_AP6210_BT_MODULE) || defined(USE_AP6476_BT_MODULE) || defined(USE_AP6335_BT_MODULE)
+#if defined(USE_AP6210_BT_MODULE) || defined(USE_AP6476_BT_MODULE) || defined(USE_AP6335_BT_MODULE) || defined(USE_AP6212_BT_MODULE)
        usleep(100000);
        close(vnd_userial.fd);
        if ((vnd_userial.fd = open(vnd_userial.port_name, O_RDWR)) == -1)
