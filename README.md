@@ -2,7 +2,8 @@
 
 ----------
 
-1 $cd lichee
+1. cd liche
+
    $ ./build.sh config          
 
 Welcome to mkscript setup progress
@@ -48,12 +49,33 @@ Choice: 0
    $ ./build.sh 
 
 
-2  $cd ../android
+**Build android** 
+
+2.0 cd ../android 
+
+
+2.1
    $source build/envsetup.sh
+   
+   
+2.2
    $lunch    //(octopus_f1-eng)
+   
+   
+2.3
    $extract-bsp
+   
+   
+2.4
    $make -j4
+   
+   
+2.5
    $pack
+   
+   
+
+
 
 
 
