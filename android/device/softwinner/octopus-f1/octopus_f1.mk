@@ -117,7 +117,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #Justin 20151005 Porting Start
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.property.tabletUI=false \
-    ro.sf.lcd_density=120 \
+    ro.sf.lcd_density=160 \
 #Justin 20151005 Porting End
 
 
