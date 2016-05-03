@@ -1994,7 +1994,7 @@ LV2_freq  = 384000000
 ;leds config parameters
 ;----------------------------------------------------------------------------------
 [leds_para]
-leds_used = 1
+leds_used = 0
 green_led = port:power0<1><default><default><0>
 green_led_active_low =0
 green_led_default_trigger = "heartbeat"
