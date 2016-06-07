@@ -18,8 +18,8 @@
 -include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
 
 WIFI_DRIVER_FW_PATH_STA    := "/system/vendor/modules/fw_bcm43438a0.bin"
-WIFI_DRIVER_FW_PATH_P2P    := "/system/vendor/modules/fw_bcm43438a0_apsta.bin"
-WIFI_DRIVER_FW_PATH_AP     := "/system/vendor/modules/fw_bcm43438a0_p2p.bin"
+WIFI_DRIVER_FW_PATH_P2P    := "/system/vendor/modules/fw_bcm43438a0_p2p.bin"
+WIFI_DRIVER_FW_PATH_AP     := "/system/vendor/modules/fw_bcm43438a0_apsta.bin"
 
 PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/firmware/ap6212/fw_bcm43438a0.bin:system/vendor/modules/fw_bcm43438a0.bin \
