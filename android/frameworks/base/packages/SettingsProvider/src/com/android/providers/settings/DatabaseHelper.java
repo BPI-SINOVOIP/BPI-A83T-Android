@@ -290,6 +290,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     Settings.Secure.ADB_ENABLED,
                     Settings.Secure.ANDROID_ID,
                     Settings.Secure.BLUETOOTH_ON,
+		    Settings.Secure.ETHERNET_ON,
                     Settings.Secure.DATA_ROAMING,
                     Settings.Secure.DEVICE_PROVISIONED,
                     Settings.Secure.HTTP_PROXY,
@@ -1274,6 +1275,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     String[] settingsToMove = {
                             Settings.Secure.ADB_ENABLED,
                             Settings.Secure.BLUETOOTH_ON,
+			    Settings.Secure.ETHERNET_ON,
                             Settings.Secure.DATA_ROAMING,
                             Settings.Secure.DEVICE_PROVISIONED,
                             Settings.Secure.INSTALL_NON_MARKET_APPS,
@@ -2564,6 +2566,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             loadBooleanSetting(stmt, Settings.Global.BLUETOOTH_ON,
                     R.bool.def_bluetooth_on);
+       
+            loadBooleanSetting(stmt, Settings.Global.ETHERNET_ON,
+                    R.bool.def_ethernet_on);
 
             // Enable or disable Cell Broadcast SMS
             loadSetting(stmt, Settings.Global.CDMA_CELL_BROADCAST_SMS,
