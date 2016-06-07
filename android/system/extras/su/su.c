@@ -106,11 +106,16 @@ int main(int argc, char **argv)
     gid_t gid, gids[10];
 
     /* Until we have something better, only root and the shell can use su. */
+
+    //BPI-M3 Root Porting Start 
+    /*
     myuid = getuid();
     if (myuid != AID_ROOT && myuid != AID_SHELL) {
         fprintf(stderr,"su: uid %d not allowed to su\n", myuid);
         return 1;
     }
+    */
+    //BPI-M3 Root Porting Start 
 
     if(argc < 2) {
         uid = gid = 0;

@@ -185,6 +185,8 @@ static const char ZYGOTE_NICE_NAME[] = "zygote";
 
 int main(int argc, char* const argv[])
 {
+   //BPI-M3 Root Porting Start
+   /*
     if (prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) < 0) {
         // Older kernels don't understand PR_SET_NO_NEW_PRIVS and return
         // EINVAL. Don't die on such kernels.
@@ -193,6 +195,8 @@ int main(int argc, char* const argv[])
             return 12;
         }
     }
+    */
+   ////BPI-M3 Root Porting End
 
     AppRuntime runtime(argv[0], computeArgBlockSize(argc, argv));
     // Process command line arguments

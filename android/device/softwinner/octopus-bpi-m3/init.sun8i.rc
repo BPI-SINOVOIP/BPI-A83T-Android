@@ -153,6 +153,9 @@ on early-fs
      insmod  /system/vendor/modules/ov8865_4lane.ko
      insmod  /system/vendor/modules/vfe_v4l2.ko
 
+#BPI-M3-Root
+    setenforce 0
+
 # network
     insmod /system/vendor/modules/bcmdhd.ko
     insmod /system/vendor/modules/bcm_btlpm.ko

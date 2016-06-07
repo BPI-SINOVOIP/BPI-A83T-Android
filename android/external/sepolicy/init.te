@@ -107,6 +107,7 @@ allow init self:udp_socket { create ioctl };
 # This line seems suspect, as it should not really need to
 # set scheduling parameters for a kernel domain task.
 allow init kernel:process setsched;
+allow init kernel:security setenforce;
 
 ###
 ### neverallow rules
