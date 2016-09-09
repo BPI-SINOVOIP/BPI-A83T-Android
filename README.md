@@ -1,7 +1,7 @@
 # BPI-M3 Android 5.1 Source code
 ----------
 ###1 Build Android BSP
- $cd lichee
+ $ cd lichee
  
    $ ./build.sh config       
 
