@@ -16,15 +16,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 
-#Justin 20150930 Porting Start
+#Justin 20161117 Porting Start
 # preinstall apk
 PRODUCT_PACKAGES += \
-    DragonFire \
-    DragonPhone \
     GooglePinyin  \
     GoogleZhuyin  \
-    kodi         
-#Justin 20150930 Porting End
+    kodi	  \
+    CameraFi     
+#Justin 20161117 Porting End
 
 	
 # usb

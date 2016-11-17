@@ -27,49 +27,9 @@ LOCAL_PATH := $(call my-dir)
 #LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 #include $(BUILD_PREBUILT)
 
-########################################
-include $(CLEAR_VARS)
-LOCAL_MODULE := DragonFire
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := platform
-LOCAL_MODULE_PATH := $(TARGET_OUT)/precopy
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_SRC_FILES := DragonFire.apk
-include $(BUILD_PREBUILT)
 
-########################################
-include $(CLEAR_VARS)
-LOCAL_MODULE := DragonPhone
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := platform
-LOCAL_MODULE_PATH := $(TARGET_OUT)/precopy
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_SRC_FILES := DragonPhone.apk
-include $(BUILD_PREBUILT)
 
-########################################
-#include $(CLEAR_VARS)
-#LOCAL_MODULE := DragonAging
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_CERTIFICATE := platform
-#LOCAL_MODULE_PATH := $(TARGET_OUT)/app
-#LOCAL_MODULE_CLASS := APPS
-#LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-#LOCAL_SRC_FILES := DragonAging.apk
-#include $(BUILD_PREBUILT)
 
-################Justin for BPI-M3 StabilityTest###################
-#include $(CLEAR_VARS)
-#LOCAL_MODULE := StabilityTest
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_CERTIFICATE := platform
-#LOCAL_MODULE_PATH := $(TARGET_OUT)/precopy
-#LOCAL_MODULE_CLASS := APPS
-#LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-#LOCAL_SRC_FILES :=StabilityTest.apk
-#include $(BUILD_PREBUILT)
 
 
 ################Justin for BPI-M3 GooglePinyin ##################
@@ -107,6 +67,16 @@ LOCAL_SRC_FILES :=GoogleZhuyin.apk
 include $(BUILD_PREBUILT)
 
 
+################Justin for BPI-M3 CameraFi###################
+include $(CLEAR_VARS)
+LOCAL_MODULE := CameraFi
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_PATH := $(TARGET_OUT)/preinstall
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_SRC_FILES :=CameraFi.apk
+include $(BUILD_PREBUILT)
 
 #################################################################
 include $(CLEAR_VARS)
