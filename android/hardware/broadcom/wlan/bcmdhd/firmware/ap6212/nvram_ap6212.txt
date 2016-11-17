@@ -1,4 +1,4 @@
-#AP6212_NVRAM_V1.0_20140603
+#AP6212_NVRAM_V1.0_20150430
 # 2.4 GHz, 20 MHz BW mode
 
 # The following parameter values are just placeholders, need to be updated.
