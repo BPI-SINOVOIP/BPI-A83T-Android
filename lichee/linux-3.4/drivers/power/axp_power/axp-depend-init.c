@@ -49,6 +49,7 @@ const bitmap_name_mapping_t pwr_dm_bitmap_name_mapping[] = {
     {VCC_CPVDD_BIT ,     "vcc-cpvdd"     },
     {VCC_LDOIN_BIT  ,    "vcc-ldoin"  },
     {VCC_PLL_BIT    ,    "vcc-pll"       },
+    {VCC_PD_BIT		,	 "vcc-pd"			}, /* bpi, vcc-pd on for usbhub USB1-DRV pin always high */
 };
 int pwr_dm_bitmap_name_mapping_cnt = sizeof(pwr_dm_bitmap_name_mapping)/sizeof(pwr_dm_bitmap_name_mapping[0]);
 

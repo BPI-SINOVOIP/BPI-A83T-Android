@@ -151,6 +151,7 @@ enum VDD_BIT
 	VCC_CPVDD_BIT,
 	VCC_LDOIN_BIT,
 	VCC_PLL_BIT,
+	VCC_PD_BIT,  /* bpi, vcc-pd on for usbhub USB1-DRV pin always high */
 	VCC_MAX_INDEX,
 };
 
