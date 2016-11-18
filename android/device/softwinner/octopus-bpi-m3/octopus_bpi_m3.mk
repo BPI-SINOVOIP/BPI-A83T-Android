@@ -114,11 +114,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapmaxfree=8m \
     ro.zygote.disable_gl_preload=true
 
-#Justin 20151005 Porting Start
+#Justin 20161118 Porting Start
+# BPI_M3 Set Density
+# HDMI Display = ro.sf.lcd_density=160
+# LCD  Display = ro.sf.lcd_density=120
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.property.tabletUI=false \
     ro.sf.lcd_density=160 \
-#Justin 20151005 Porting End
+#Justin 20161118 Porting End
 
 
 # function
