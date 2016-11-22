@@ -3901,7 +3901,11 @@ public class WindowManagerService extends IWindowManager.Stub
     boolean updateOrientationFromAppTokensLocked(boolean inTransaction) {
         long ident = Binder.clearCallingIdentity();
         try {
-            int req = getOrientationFromWindowsLocked();
+	    //Justin 20161122 Porting (The Dispaly always in landscape mode) Start
+            //int req = getOrientationFromWindowsLocked();
+	      int req = computeForcedAppOrientationLocked();
+           //Justin 20161122 Porting (The Dispaly always in landscape mode) End
+
             if (req == ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
                 req = getOrientationFromAppTokensLocked();
             }
@@ -3922,6 +3926,19 @@ public class WindowManagerService extends IWindowManager.Stub
             Binder.restoreCallingIdentity(ident);
         }
     }
+
+ 
+   //Justin 20161122 Porting (The Dispaly always in landscape mode) Start 
+   int computeForcedAppOrientationLocked() {
+        int req = getOrientationFromWindowsLocked();
+        if (req == ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
+            req = getOrientationFromAppTokensLocked();
+        }
+        req = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+        return req;
+    }
+   //Justin 20161122 Porting (The Dispaly always in landscape mode) End
+
 
     @Override
     public void setNewConfiguration(Configuration config) {
