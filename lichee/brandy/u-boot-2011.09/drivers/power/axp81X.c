@@ -194,6 +194,20 @@ int axp81_probe_power_status(void)
 {
 	u8 reg_value;
 
+    //Justin 20161210 Porting For Uboot_Power Start
+    #define	AC_VAL	0x85
+    if((reg_value !=AC_VAL)) {
+                printf("BPI-M3:Set Uboot-[AXP81X]-Power\n");
+
+		axp_i2c_write(AXP81X_ADDR, 0x3A, AC_VAL);
+		axp_i2c_read(AXP81X_ADDR, 0x3A,&reg_value);
+		axp_i2c_write(AXP81X_ADDR, 0x35, 0x83);
+		axp_i2c_read(AXP81X_ADDR, 0x35,&reg_value);
+
+	}
+    //Justin 20161210 Porting For Uboot_Power End
+  
+
 	if(axp_i2c_read(AXP81X_ADDR, BOOT_POWER81X_STATUS, &reg_value))
     {
         return -1;
@@ -630,9 +644,29 @@ int axp81_set_vbus_cur_limit(int current)
     return 0;
 }
 
+
+//Justin 20161210 Porting For Uboot_Power Start
+int axp81_dump_reg(void)
+{
+	int i;
+	uchar reg_value;
+	for(i=0;i<=0x3e;i++)
+	{
+		axp_i2c_read(AXP81X_ADDR, i,&reg_value);
+		printf("[AXP81X]:[%02X]=[%02X]\n", i , reg_value);
+	}
+	 return 0;
+}
+//Justin 20161210 Porting For Uboot_Power End
+
+
 int axp81_probe_vbus_cur_limit(void)
 {
     uchar reg_value;
+
+       //Justin 20161210 Porting For Uboot_Power Start
+	axp81_dump_reg();
+       //Justin 20161210 Porting For Uboot_Power End
 
     if(axp_i2c_read(AXP81X_ADDR,BOOT_POWER81X_VBUS_SET,&reg_value))
     {
